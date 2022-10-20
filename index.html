@@ -74,21 +74,19 @@
         transition: .3s;
         transform: rotate(180deg);
         }
-        
     </style>
     
 
     <script>
-
-        function modalVie() {
-            document.querySelector(".modal").classList.add('open');
-        }
-
-        setTimeout(modalVie, 1000);
-
         document.addEventListener("DOMContentLoaded", () => {
-            elem.onclick = function() {
-                document.querySelector(".modal").classList.remove('open');;
+            function modalVie() {
+                document.querySelector(".modal").classList.add('open');
+            }
+            setTimeout(modalVie, 1000);
+
+
+            document.querySelector(".modal__close-button").onclick = function() {
+                document.querySelector(".modal").classList.remove('open');
             };
         }); 
     </script>
