@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="modal">
+  <div class="modal__content">
+    <button class="modal__close-button">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+        </svg>
+    </button>
+    <!-- Контент модального окна -->
+    <h1 class="modal__title">Контент для примера</h1>
+  </div>
+</div>
+
+
+    <style>
+        .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow-y: scroll;
+        padding: 60px 15px;
+        transition: all 0.5s ease;
+        opacity: 0;
+        visibility: hidden;
+        }
+        .modal.open {
+		visibility: visible;
+		opacity: 1;
+	    }
+        
+        .modal__content {
+        width: 100%;
+        max-width: 500px;
+        padding: 50px;
+        background: #f9f9f9;
+        border-radius: 3px;
+        position: relative;
+        box-shadow: 0 5px 15px black;
+        }
+        
+        .modal__close-button {
+        background: red;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        transition: .3s;
+        outline: none;
+        }
+        
+        .modal__close-button:hover {
+        transition: .3s;
+        transform: rotate(180deg);
+        }
+        
+    </style>
+    
+
+    <script>
+
+        function modalVie() {
+            document.querySelector(".modal").classList.add('open');
+        }
+
+        setTimeout(modalVie, 1000);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            elem.onclick = function() {
+                document.querySelector(".modal").classList.remove('open');;
+            };
+        }); 
+    </script>
+</body>
+</html>
